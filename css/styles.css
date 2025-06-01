@@ -4273,7 +4273,7 @@ img.u-pull-left {
     text-align: center;
   }
   
-  .section-title {
+.section-title {
     font-family    : var(--font-1);
     font-size      : var(--text-sm);
     font-weight    : 400;
@@ -4284,17 +4284,64 @@ img.u-pull-left {
     margin-left    : .2rem;
     margin-bottom  : var(--vspace-0_5);
     position       : relative;
-    right: 478px;
-  }
+}
+.section-title.with-line {
+    color        : var(--color-1);
+    padding-left : 6rem;
+    transform    : translateX(-6rem);
+}
+
+.section-title.with-line::before {
+    content          : "";
+    display          : block;
+    height           : 1px;
+    width            : 4rem;
+    background-color : rgba(255, 255, 255, 0.5);
+    position         : absolute;
+    top              : 50%;
+    left             : 0;
+}
+@media screen and (max-width: 800px) {
+    .section-title.with-line {
+        padding-left : 3rem;
+        transform    : translateX(-3rem);
+        transform    : none;
+    }
+
+    .section-title.with-line::before {
+        width : 2rem;
+    }
+}
+
+
+/* Adjust font size and spacing for smaller devices
+@media only screen and (max-width: 1200px) {
+    .section-title {
+        letter-spacing: 0.2em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .section-title {
+        letter-spacing: 0.20em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .section-title {
+        font-size: calc(var(--text-sm) * 0.85);
+        letter-spacing: 0.1em;
+    }
+} */
   
-  /* Grid Layout */
-  /* .services-grid {
+  /* Grid Layout
+ .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-  } */
+  }  */
   
   /* Card Styles */
   .card {
